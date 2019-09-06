@@ -1,0 +1,59 @@
+<!-- JUMBOTRON -->
+<div class="jumbotron jumbotron-fluid shadow index-jumbo" style="background-color: #5477E8">
+    <div class="container">
+        <h1 class="display-4 index-title">Hoarder Helper</h1>
+        <p class="lead index-lead">Connecting people with extra space to people with extra stuff!
+        </p>
+        <br>
+        <!-- SEARCH BAR -->
+        <div class="input-group mb-3">
+            <input type="text" id="zipCodeVal" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
+                aria-describedby="button-addon2" >
+
+            <div class="input-group-append">
+                <a href='' onclick="this.href='listings/'+document.getElementById('zipCodeVal').value" id="searchVal">
+                    <button id="searchBtn" class="btn btn-outline-secondary" type="button" style="background-color:white; color: black;">Search for
+                        Storage</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SECOND HALF OF HOMEPAGE -->
+
+<div class="container">
+    <div class="row">
+        {{#each listings}}
+        <div class="card viewListingsCards wrapper" style="width: 18rem;">
+            <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">Price: ${{this.price}}/month</p>
+                <p class="card-text">Category: {{this.category}}</p>
+                <p class="card-text">Location: {{this.city}}, {{this.state}}</p>
+                <div class="text-center" style="item-align:center">
+                <a href="/profile/listing/{{this.product_id}}" id="{{this.product_id}}"
+                    class="btn btn-primary viewListing">View Listing</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+	<!-- Footer -->
+	<div class="card footer">
+		<div class="card-footer" style="border-top: 1px solid #5477E8;border-bottom: 1px solid lightslategrey">
+			Real User's Comments
+		</div>
+		<div class="card-body">
+			<blockquote class="blockquote mb-0">
+				<p>The site was so easy to use!</p>
+				<footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite
+						title="Source Title">Jonathan
+						Bae Jerano</cite>
+				</footer>
+			</blockquote>
+		</div>
+	</div>

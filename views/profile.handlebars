@@ -1,0 +1,82 @@
+<!-- CLickable Images -->
+<!-- THROW THESE IN A CARD -->
+<div class="jumbotron jumbotron-fluid shadow profile-jumbo" style="background-color: #5477E8">
+    <div class="container">
+        <div class="row">
+            <div class="col"><h1 class="display-4 profile-title">Welcome, {{user.first_name}} {{user.last_name}}</h1></div>
+            <div class="col profile-div">
+            <a class="btn btn-outline-light profile-button" href="/api/storage/post" role="button">Post a Listing </a>
+            <a class="btn btn-outline-light profile-button" href="/profile/update" role="button">Update Profile</a></div>
+        </div>
+    </div>
+</div>
+{{!-- these images were inside the links above
+<img src="assets/images/postHome.png" class="usericon" title="Post a Listing" alt="New Listing">
+<img src="assets/images/clipBoard.jpg" class="usericon" title="Update Profile"alt="Update Profile"> --}}
+
+<!-- SECOND HALF OF HOMEPAGE -->
+{{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
+{{!-- <div class="container">
+    <h2>Your Favorites</h2>
+    <div class="container">
+        <div class="row">
+            {{#each listings}}
+            <div class="card viewListingsCards wrapper" style="width: 18rem;">
+                <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
+                    <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
+                    <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
+                    <div class="text-center" style="item-align:center">
+                        <div class="text-center" style="item-align:center"><a href="profile/listing/{{this.product_id}}"
+                                id="{{this.product_id}}" class="btn btn-primary viewListing">View Listing</a></div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div> --}}
+{{!-- Divider Line --}}
+{{!-- <hr> --}}
+
+
+
+{{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
+<div class="container">
+    <h2>Your Postings</h2>
+    <hr>
+    <div class="container">
+        <div class="row">
+            {{#each listings}}
+            <div class="card viewListingsCards wrapper" style="width: 18rem;">
+                <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">Price: ${{this.price}}/month</p>
+                    <p class="card-text">Category: {{this.category}}</p>
+                    <p class="card-text">Location: {{this.city}}, {{this.state}}</p>
+                    <div class="text-center" style="item-align:center"><a href='/api/{{this.product_id}}'
+                            class='btn btn-primary userlisting' id='{{this.product_id}}'>Update</a></div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+	<!-- Footer -->
+	<div class="card footer">
+		<div class="card-footer" style="border-top: 1px solid #5477E8;border-bottom: 1px solid lightslategrey">
+			Real User's Comments
+		</div>
+		<div class="card-body">
+			<blockquote class="blockquote mb-0">
+				<p>The site was so easy to use!</p>
+				<footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite
+						title="Source Title">Jonathan
+						Bae Jerano</cite>
+				</footer>
+			</blockquote>
+		</div>
+	</div>

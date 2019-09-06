@@ -1,0 +1,78 @@
+{{#each storages}}
+
+{{!-- <div class="wrapper">
+    <div class="jumbotron" style="background-color: white; padding: 0 0; "> --}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" style="padding-top: 30px">
+            <img src="{{this.img_url}}" alt="property_img" style="border: 1px solid #5477E8" class="img-thumbnail update-img">
+        </div>
+        <div class="col-md-8" style="padding-top: 30px">
+            <h2 class="update-title" style="color:#5477E8;">Update Listing</h2>
+            <hr>
+            <form id="usrform">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" class="form-control" value="{{this.title}}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input id="address" type="text" class="form-control" value="{{this.address}}" placeholder="address"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input id="city" type="text" class="form-control" value="{{this.city}}" placeholder="city" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input id="state" type="text" class="form-control" value="{{this.state}}" placeholder="state"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip</label>
+                    <input id="zip" type="number" class="form-control" value="{{this.zip}}" placeholder="zip" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input id="category" type="text" class="form-control" value={{this.category}} placeholder="category"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <label for="secure">Secure</label>
+                    <input id="secure" type="text" class="form-control" value="{{#if this.secure}}true
+                                    {{else}}false
+                                    {{/if}}" placeholder="secure" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input id="price" type="number" class="form-control" value={{this.price}} placeholder="price"
+                        readonly>
+                </div>
+                {{!-- <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Description</label>
+                                <textarea id="description" class="form-control" id="exampleFormControlTextarea1"value= {{this.description}}
+                                    rows="5" readonly></textarea>
+                            </div> --}}
+                <textarea rows="4" name="comment" readonly
+                    style="width: 100%;border: 1px solid #5477E8">{{this.description}}</textarea>
+
+                <div id="newpricediv" class="form-group" style="display:none">
+                    <label for="newPrice"> New Price</label>
+                    <input id="newprice" type="number" class="form-control" placeholder="newprice">
+                </div>
+                <div class="text-center" style="item-align:center">
+                <button id="update" type="update" class="btn btn-primary update-button">Update</button>
+                <button id="delete" type="delete" class="btn btn-primary update-button">Delete</button>
+                </div>
+                <button id="confirmUpdate" data-product_id="{{this.product_id}}" type="confirmUpdate"
+                    class="btn btn-primary" style="display:none">Confirm Update</button>
+                <button id="confirmDelete" data-product_id="{{this.product_id}}" type="confirmDelete"
+                    class="btn btn-primary" style=" display:none">Confirm Delete</button>
+                <button id="cancel" type="cancel" class="btn btn-primary" style="display:none">Cancel</button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+   {{/each}}

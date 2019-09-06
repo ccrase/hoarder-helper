@@ -1,0 +1,121 @@
+<div class="container-fluid">
+    <div class="d-flex flex-row bd-highlight">
+        <div class="col-lg-6">
+    {{#listing}}
+            <div class="card shadow each-card">
+              <img src='{{this.img_url}}' class="card-img-top each-listing-img" alt='Listing Image'>
+              <div class="card-body">
+                <h5 class="card-title each-title">{{this.title}}</h5>
+                <hr>
+                <p class="card-text each-description">{{this.description}}</p>
+                <br>
+                <p class="card-text">Location: {{this.address}} {{this.city}}, {{this.state}}</p>
+                <p class="card-text">Price: ${{this.price}}/month</p>
+                <p class="card-text">Category: {{this.category}}</p>
+                    
+                    {{!-- put calendar here!!! --}}
+                    <h5 class="each-calendarTitle">Check availability</h5>
+                    <div class="text-center" style="item-align:center">
+                    <input class="date-input" type="text" data-dd-theme="hoarder-theme" style="border: 1px solid #5477E8">
+                    <input class="date-input" type="text" data-dd-theme="hoarder-theme" style="border: 1px solid #5477E8">
+                    </div>
+                    {{!-- end of calendar --}}
+            {{/listing}} 
+                    <div style="text-align:center"><input class='btn btn-primary' action="action" onclick="window.history.go(-1); return false;" type="button" value="Go Back" />
+                    {{#if user}}
+                        <a class='btn btn-primary' data-toggle="modal" data-target="#bookingModal" style="color:white;">Book</a>
+                    {{else}}
+                        <a class='btn btn-primary' data-toggle="modal" data-target="#signupModal" style="color:white;">Book</a>
+                    {{/if}}
+                        <a class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="col-lg-6" style="margin-right: 1%;">
+                    <div id="map" style="width:220%; height:800px;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- BOOKING Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="booking-listing" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thank You!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Your request for booking has been sent! Please wait 24 hours for the owner to approve your request. 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- SIGNUP Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Whoops!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                You need to sign up or log in to proceed with booking!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script>
+
+        // Initialize and add the map
+        function initMap() {
+            var options = {
+                zoom: 10,
+                center: { lat: 40.7608, lng: -111.8910 }
+            }
+            console.log(options.center);
+            // The map, centered at options
+            var map = new google.maps.Map(document.getElementById('map'), { zoom: 12, options });
+            // The marker, positioned at options
+            addMarker({ lat: 41.0894, lng: -112.0647 });
+            addMarker({ lat: 40.5650, lng: -111.8390 });
+            addMarker({ lat: 41.11255, lng: -111.76874 });
+            addMarker({ lat: 40.75195, lng: -111.8921 });
+            addMarker({ lat: 40.752096, lng: -111.93901 });
+            addMarker({ lat: 40.7737, lng: -111.90623 });
+
+            function addMarker(coords) {
+                var image = 'http://maps.google.com/mapfiles/kml/paddle/blu-circle.png';
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    animation: google.maps.Animation.DROP,
+                    map: map,
+                    icon: image
+                });
+            }
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2BBPXcQt6Md9T1SnCW6I4y8C-Uy-npbc&callback=initMap">
+        </script>

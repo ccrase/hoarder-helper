@@ -1,0 +1,320 @@
+body{
+    /* needs height !! */
+    height: 100%;
+}
+
+
+/* index page */
+.index-jumbo{
+    padding: 30px 0 40px 0;
+}
+.index-title{
+    color: white;
+    font-weight: bold;
+    text-shadow:1px 1px black;
+}
+.index-lead{
+    font-weight: 600;
+    font-size: 24px;
+    padding-left: 90px;
+}
+.input-group{
+    margin: auto;
+    width: 70%;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+.each-listing-img{
+    height: auto;
+}
+
+
+/* index page cards */
+.card-title{
+    text-align: center;
+    font-size: 22px;
+}
+.card-text{
+    margin: 5px;
+}
+.btn-primary{
+    background-image: radial-gradient(#5476E8, #4A69CF);
+    border-color: #415CB5;
+    color: white;
+    margin-top: 25px;
+    font-weight: 400;
+}
+
+
+
+/* profile page  */
+.profile-jumbo{
+    padding: 10px;
+}
+.profile-title{
+    padding-top: 20px;
+    color: white;
+    text-shadow:1px 1px black;
+    font-size: 40px;
+    font-weight: 700;
+}
+/* clipboard and house icon on profile page */
+/* .usericon{
+    width: 60px;
+    height: auto;
+    margin: 0 30px 0 30px;
+    float: right;
+} */
+.profile-div{
+    margin: 0 0 0 100px;
+    top: 30px;
+}
+.profile-button{
+    margin: 0 20px 0 20px;
+}
+
+
+/* update user profile page */
+.updateProfile-title{
+    text-align: center;
+}
+.update-profile-img{
+    margin-top: 50px;
+    width: 300px;
+}
+
+/* create new listing page */
+.post-title{
+    text-align: center;
+}
+.createListing-img{
+    margin-top: 50px;
+    width: 400px;
+    height: 135px;
+}
+.post-button{
+    margin: 0 20px 0 20px;
+}
+
+
+/* update listing page */
+.update-title{
+    text-align: center;
+}
+.update-img{
+    margin-top: 50px;
+    width: 300px;
+}
+.update-button{
+    margin: 15px 20px 0 20px;    
+}
+
+
+/* each-listing page */
+.each-card{
+    margin-top: 10px;
+}
+.each-title{
+    text-align: center;
+    font-size: 34px;
+}
+.each-description{
+    font-size: 16px;
+}
+.each-calendarTitle{
+    text-align: center;
+}
+
+
+/* modals */
+#resumeTitle{
+    text-align: center;
+}
+
+
+
+h2 {
+    text-align: left;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}      
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}     
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.spaces {
+    float: left;
+}
+
+/* clipboard and house icon on profile page */
+.usericon{
+    width: 60px;
+    height: auto;
+};
+
+
+
+/* styling the cards */
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+}
+
+.viewListingsCards {
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+  }
+  .viewListingsCards:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    box-shadow: 10px 15px 7px #C7C7C7;
+  }
+ .viewListingsCards{
+    margin: 25px;}
+
+      
+
+    .sticky {
+        position: fixed;
+        top: 2%;
+        width: 47.5%;
+        margin-left: 48.9%;
+    }
+
+.mapView {
+    margin-left: 88%;
+}
+
+#mapContainer {
+    margin-right: 2%;
+}
+.favMarker {
+    color: red;
+}
+.favorites {
+    color: red;
+}
+.favorites:hover {
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      color: black;
+    }
+    100% {
+      color: #FF4136;
+    }
+  }
+
+/* listings page search  */
+.small-searchbar{
+    width: 40%;
+    float: right;
+    margin: 20px;
+}
+.zip-results{
+    margin: 20px;
+}
+
+/* footer */
+.footer{
+    position: relative;
+    bottom: 0;
+}
+
+.form-control{
+    border: 1px solid #5477E8;
+}
+
+
+/* cards on listings page */
+
+#listingCards {
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+  }
+  #listingCards:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    box-shadow: 10px 15px 7px #C7C7C7;
+  }
+
+  #searchBtn{
+      color: white;
+      background-color: #5477E8;
+  }
+
+  div.datedropper.hoarder-theme {
+
+    --dd-color1: #5476E8;
+    --dd-color2: #FFF;
+    --dd-color3: #4D4D4D;
+    --dd-color4: #FFF;
+  
+    --dd-radius: 8px;
+    --dd-width: 180px;
+    --dd-shadow: 0 0 32px 0px rgba(0, 0, 0, 0.1);
+  
+  }
+
+
+  @media only screen and (max-width: 992px) {
+    .index-lead{
+        font-weight: 600;
+        font-size: 20px;
+        padding-left: 0;
+    } 
+    .input-group{
+        width: 100%;
+    }
+}

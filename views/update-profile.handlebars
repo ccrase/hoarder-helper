@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" style="padding-top: 30px" id="userprofilepic-large">
+      <img src="{{user.thumbnail}}" class="img-thumbnail update-profile-img" style="border: 1px solid #5477E8">
+    </div>
+    <div class="col-sm-8" style="padding-top: 30px">
+      <h2 class="updateProfile-title" style="color:#5477E8;">Update Profile</h2>
+      <hr>
+      <form id="customerForm" class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="validationCustom01">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" placeholder="{{user.first_name}}" required>
+          <div class="invalid-feedback">
+            Please enter your first name.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="validationCustom02">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02" placeholder="{{user.last_name}}" required>
+          <div class="invalid-feedback">
+            Please enter your last name.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="validationCustomUsername">Username</label>
+          <div class="input-group" style="margin:0px 0px; width:100%">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend" style="border: 1px solid #5477E8">@</span>
+            </div>
+            <input type="text" class="form-control" id="validationCustomUsername" placeholder="{{user.username}}"
+              aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="validationCustom03">Email address</label>
+          <input type="text" class="form-control" id="validationCustom03" placeholder="{{user.email_address}}" required>
+          <div class="invalid-feedback">
+            Please provide a valid email address.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="validationCustom04">Phone Number</label>
+          <input type="text" class="form-control" id="validationCustom04" placeholder="{{user.phone_number}}" required>
+          <div class="invalid-feedback">
+            Please provide a valid phone number.
+          </div>
+        </div>
+
+        <!--image checkbox-->
+{{!-- <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+</div>
+        <!--end of img checklist-->
+        
+        <!--image upload-->
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="validatedCustomFile">
+          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+          <div class="invalid-feedback">Select an image for your profile picture. </div>
+        </div>
+        <!--end of image upload input-->
+        <hr> --}}
+        <div class="text-center" style="item-align:center">
+        <button class="btn btn-primary userUpdateButton" type="submit" id="{{user.customer_id}}">Submit form</button>
+        </div>
+        </form>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<br>
+<br>
+
+<script src="/assets/js/update-profile.js"></script>
