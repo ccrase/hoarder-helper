@@ -47,8 +47,7 @@ app.use('/api', apiRoutes);
 app.use(awsRoutes);
 
 //create home route
-
-app.get('/', (req, res)=>{
+app.get("/", (req, res)=>{
     listing.allListings(function(data){
         var listings = data;
         res.render('index', {user:req.user, listings})
@@ -57,6 +56,5 @@ app.get('/', (req, res)=>{
 
 
 app.listen(PORT, function(){
-
     console.log("App is now listening on http://localhost:" + PORT);
 });
